@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   alg_utils.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nateshim <nateshim@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/14 11:07:17 by nateshim          #+#    #+#             */
+/*   Updated: 2025/01/14 11:11:58 by nateshim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	rotate_and_swap(t_init *s)
@@ -9,16 +21,26 @@ void	rotate_and_swap(t_init *s)
 
 void	move_to_top(t_init *s)
 {
-	int half = s->int_a / 2;
+	int	half;
+
+	half = s->int_a / 2;
 	if (s->small_i < half)
 	{
-		for (s->i = 0; s->i < s->small_i; s->i++)
+		s->i = 0;
+		while (s->i < s->small_i)
+		{
 			ft_rotatea(s);
+			s->i++;
+		}
 	}
 	else
 	{
-		for (s->i = s->int_a; s->i > s->small_i; s->i--)
+		s->i = s->int_a;
+		while (s->i > s->small_i)
+		{
 			ft_reverse_rotatea(s);
+			s->i--;
+		}
 	}
 }
 

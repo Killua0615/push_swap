@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natsumi <natsumi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nateshim <nateshim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 04:27:28 by nateshim          #+#    #+#             */
-/*   Updated: 2025/01/14 10:27:03 by natsumi          ###   ########.fr       */
+/*   Updated: 2025/01/14 10:35:50 by nateshim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-#ifndef SIZE_MAX
-# define SIZE_MAX 18446744073709551615UL
-#endif
+# ifndef SIZE_MAX
+#  define SIZE_MAX 18446744073709551615UL
+# endif
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>

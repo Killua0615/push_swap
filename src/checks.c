@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checks.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nateshim <nateshim@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/14 11:07:36 by nateshim          #+#    #+#             */
+/*   Updated: 2025/01/14 11:07:38 by nateshim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	is_sorted(t_init *s)
@@ -16,8 +28,8 @@ int	is_sorted(t_init *s)
 
 void	validate_max_min(char *str)
 {
-	int		index;
-	int		length;
+	int	index;
+	int	length;
 
 	index = 0;
 	length = ft_strlen(str);

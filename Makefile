@@ -1,25 +1,24 @@
 SRCS	= main.c errors.c algorithms1.c algorithms2.c normalize.c instructions2.c instructions1.c instructions3.c checks.c helpers.c free.c alg_utils.c
 
 SRC_DIR = src/
-OBJS	:= $(SRCS:%.c=%.o)
-SRC = $(addprefix $(SRC_DIR), $(SRCS))
+OBJS	:= $(SRCS:%.c=$(SRC_DIR)%.o)
 
 NAME	= push_swap
 
 CC		= gcc -g
 RM		= rm -f
 
-CFLAGS 	= -Wall -Wextra -Werror #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -no-pie
 
 all:		${NAME}
 
-%.o:	$(SRC_DIR)%.c
-		${CC} ${CFLAGS} -Ilibft -Ift_printf -c $? -o $@
+$(SRC_DIR)%.o: $(SRC_DIR)%.c
+		${CC} ${CFLAGS} -Ilibft -Ift_printf -c $< -o $@
 
 ${NAME}:	${OBJS}
 		@make -C libft
 		@make -C ft_printf
-		${CC} ${CFLAGS} $^ -Llibft -lft -Lft_printf -lftprintf -o ${NAME}
+		${CC} ${CFLAGS} ${OBJS} -Llibft -lft -Lft_printf -lftprintf -o ${NAME}
 
 libft:
 		make -C libft
@@ -38,3 +37,4 @@ fclean:		clean
 re:			fclean all
 
 .PHONY:		libft ft_printf
+

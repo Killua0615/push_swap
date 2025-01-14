@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   normalize.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nateshim <nateshim@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/14 11:08:19 by nateshim          #+#    #+#             */
+/*   Updated: 2025/01/14 11:08:21 by nateshim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_normalize(t_init *s)
 {
-	int		i;
-	int		j;
-	int		count;
+	int	i;
+	int	j;
+	int	count;
 
 	init_stack(s);
 	i = -1;
@@ -23,5 +35,5 @@ void	ft_normalize(t_init *s)
 		s->pile_a[i] = ((s->int_a - 1) - count);
 		i++;
 	}
-	free (s->tmp);
+	free(s->tmp);
 }

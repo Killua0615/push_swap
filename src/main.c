@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nateshim <nateshim@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/14 11:08:09 by nateshim          #+#    #+#             */
+/*   Updated: 2025/01/14 11:12:33 by nateshim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	main(int argc, char **argv)
@@ -7,7 +19,6 @@ int	main(int argc, char **argv)
 	ps.int_a = 0;
 	ps.int_b = 0;
 	ps.i = 0;
-
 	if (argc > 1)
 	{
 		if (argc == 2)
@@ -47,7 +58,6 @@ void	two_args_init(t_init *ps, char **argv)
 	free(ps->arguments);
 }
 
-
 void	mult_args_init(t_init *ps, int argc, char **argv)
 {
 	ps->int_a = argc - 1;
@@ -60,6 +70,7 @@ void	mult_args_init(t_init *ps, int argc, char **argv)
 		ps->i++;
 	}
 }
+
 void	fill_pile_a(t_init *ps)
 {
 	while (ps->arguments[ps->i])

@@ -1,7 +1,7 @@
 NAME	= libft.a
 SONAME  = libft.so
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror -g
+CFLAGS	= -Wall -Wextra -Werror
 
 SRCS	=	ft_atoi.c \
 			ft_bzero.c \
