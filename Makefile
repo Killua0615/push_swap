@@ -1,15 +1,16 @@
 SRCS	=	main.c \
-			errors.c \
-			algorithms1.c \
-			algorithms2.c \
+			error.c \
+			algo1.c \
+			algo2.c \
 			normalize.c \
-			instructions2.c \
-			instructions1.c \
-			instructions3.c \
+			steps2.c \
+			steps1.c \
+			steps3.c \
 			checks.c \
 			helpers.c \
 			free.c \
-			alg_utils.c
+			alg_utils.c \
+			median.c
 
 SRC_DIR	=	src/
 OBJS	=	$(addprefix $(SRC_DIR), $(SRCS:.c=.o))
