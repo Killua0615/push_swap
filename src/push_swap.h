@@ -6,7 +6,7 @@
 /*   By: nateshim <nateshim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:06:30 by nateshim          #+#    #+#             */
-/*   Updated: 2025/01/14 11:06:33 by nateshim         ###   ########.fr       */
+/*   Updated: 2025/01/16 20:57:26 by nateshim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # include <string.h>
 # include <unistd.h>
 
-// Add your struct definitions here
 typedef struct s_init
 {
 	int		*pile_a;
@@ -36,7 +35,7 @@ typedef struct s_init
 	char	**arguments;
 }			t_init;
 
-/* algorithms1/2.c */
+/* algo.c */
 void		execute_algorithms(t_init *s);
 void		handle_two_elements(t_init *s);
 void		handle_three_elements(t_init *s);
@@ -59,26 +58,26 @@ void		init_stack(t_init *s);
 /* normalize.c */
 void		ft_normalize(t_init *s);
 
-/* instructions1.c */
+/* steps1.c */
 void		ft_swapa(t_init *s);
 void		ft_swapb(t_init *s);
 void		ft_swaps(t_init *s);
 void		ft_pusha(t_init *s);
 void		ft_pushb(t_init *s);
 
-/* instructions2.c */
+/* steps2.c */
 void		ft_rotatea(t_init *s);
 void		ft_rotateb(t_init *s);
 void		ft_rotater(t_init *s);
 int			check_order(t_init *s);
 
-/* instructions3.c */
+/* steps3.c */
 void		ft_reverse_rotatea(t_init *s);
 void		ft_reverse_rotateb(t_init *s);
 void		ft_reverse_rotater(t_init *s);
 
-void		two_args_init(t_init *ps, char **argv);
-void		mult_args_init(t_init *ps, int argc, char **argv);
+void		two_args_init(t_init *ps, char **av);
+void		mult_args_init(t_init *ps, int ac, char **av);
 void		process_input(t_init *ps);
 void		fill_pile_a(t_init *ps);
 

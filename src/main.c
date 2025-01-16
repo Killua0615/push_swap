@@ -6,25 +6,25 @@
 /*   By: nateshim <nateshim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:08:09 by nateshim          #+#    #+#             */
-/*   Updated: 2025/01/14 11:12:33 by nateshim         ###   ########.fr       */
+/*   Updated: 2025/01/16 20:57:26 by nateshim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	main(int ac, char **av)
 {
 	t_init	ps;
 
 	ps.int_a = 0;
 	ps.int_b = 0;
 	ps.i = 0;
-	if (argc > 1)
+	if (ac > 1)
 	{
-		if (argc == 2)
-			two_args_init(&ps, argv);
-		else if (argc > 2)
-			mult_args_init(&ps, argc, argv);
+		if (ac == 2)
+			two_args_init(&ps, av);
+		else if (ac > 2)
+			mult_args_init(&ps, ac, av);
 		process_input(&ps);
 	}
 }
@@ -42,9 +42,9 @@ void	process_input(t_init *ps)
 	}
 }
 
-void	two_args_init(t_init *ps, char **argv)
+void	two_args_init(t_init *ps, char **av)
 {
-	ps->arguments = ft_split(argv[1], ' ');
+	ps->arguments = ft_split(av[1], ' ');
 	if (!ps->arguments)
 		error();
 	while (ps->arguments[ps->int_a])
@@ -58,15 +58,15 @@ void	two_args_init(t_init *ps, char **argv)
 	free(ps->arguments);
 }
 
-void	mult_args_init(t_init *ps, int argc, char **argv)
+void	mult_args_init(t_init *ps, int ac, char **av)
 {
-	ps->int_a = argc - 1;
+	ps->int_a = ac - 1;
 	create_stacks(ps);
 	while (ps->i < ps->int_a)
 	{
-		validate_numeric(argv[ps->i + 1]);
-		validate_max_min(argv[ps->i + 1]);
-		ps->pile_a[ps->i] = ft_atoi(argv[ps->i + 1]);
+		validate_numeric(av[ps->i + 1]);
+		validate_max_min(av[ps->i + 1]);
+		ps->pile_a[ps->i] = ft_atoi(av[ps->i + 1]);
 		ps->i++;
 	}
 }
