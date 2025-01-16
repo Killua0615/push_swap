@@ -44,7 +44,10 @@ clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	@make fclean -C libft
+	@make fclean -C ft_printf
+	$(RM) $(NAME) $(LIBFT) $(PRINTF)
+
 
 re: fclean all
 
